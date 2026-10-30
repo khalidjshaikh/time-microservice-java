@@ -1,4 +1,4 @@
-# time-microservice
+# time-microservice-java
 
 A small Java microservice that returns the current date and time for the root path (`/`).
 
@@ -45,7 +45,7 @@ A small Java microservice that returns the current date and time for the root pa
 
 ```bash
 ./scripts/package.sh
-docker run --rm -p 8080:8080 time-microservice:latest
+docker run --rm -p 8080:8080 time-microservice-java:latest
 ```
 
 ## Deploy to Kubernetes

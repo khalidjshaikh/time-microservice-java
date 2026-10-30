@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Build the time-microservice binary for the host platform.
+# Build the time-microservice-java binary for the host platform.
 set -euo pipefail
 
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
@@ -16,16 +16,16 @@ mvn -o -q -DskipTests \
     -Dmaven.compiler.release="${JAVA_RELEASE:-21}" \
     package
 
-JAR="$(ls target/time-microservice-*.jar | head -n1)"
-cp "$JAR" bin/time-microservice.jar
+JAR="$(ls target/time-microservice-java-*.jar | head -n1)"
+cp "$JAR" bin/time-microservice-java.jar
 
-cat > bin/time-microservice <<'LAUNCHER'
+cat > bin/time-microservice-java <<'LAUNCHER'
 #!/usr/bin/env bash
-# Launcher for the time-microservice Java application.
+# Launcher for the time-microservice-java Java application.
 DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-exec java ${JAVA_OPTS:-} -jar "$DIR/time-microservice.jar" "$@"
+exec java ${JAVA_OPTS:-} -jar "$DIR/time-microservice-java.jar" "$@"
 LAUNCHER
-chmod +x bin/time-microservice
+chmod +x bin/time-microservice-java
 
-echo "Built bin/time-microservice"
-echo "Built bin/time-microservice.jar"
+echo "Built bin/time-microservice-java"
+echo "Built bin/time-microservice-java.jar"

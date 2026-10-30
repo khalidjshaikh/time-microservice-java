@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: time-microservice
+  name: time-microservice-java
   labels:
-    app: time-microservice
+    app: time-microservice-java
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: time-microservice
+      app: time-microservice-java
   template:
     metadata:
       labels:
-        app: time-microservice
+        app: time-microservice-java
     spec:
       containers:
-        - name: time-microservice
-          image: time-microservice:latest
+        - name: time-microservice-java
+          image: time-microservice-java:latest
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8080
@@ -49,12 +49,12 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: time-microservice
+  name: time-microservice-java
   labels:
-    app: time-microservice
+    app: time-microservice-java
 spec:
   selector:
-    app: time-microservice
+    app: time-microservice-java
   ports:
     - port: 80
       targetPort: 8080

@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         PATH = "/opt/homebrew/bin:/opt/homebrew/opt/openjdk/bin:/opt/homebrew/opt/ruby/bin:/Users/kshaikh/.nvm/versions/node/v26.11.1/bin:/Users/kshaikh/.pyenv/shims:/usr/bin:/bin:/usr/sbin:/sbin"
-        IMAGE = "time-microservice"
+        IMAGE = "time-microservice-java"
         TAG   = "${env.GIT_COMMIT ? env.GIT_COMMIT.take(7) : env.BUILD_NUMBER}"
     }
 

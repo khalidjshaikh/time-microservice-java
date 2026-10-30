@@ -4,11 +4,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.example</groupId>
-    <artifactId>time-microservice</artifactId>
+    <artifactId>time-microservice-java</artifactId>
     <version>1.0.0</version>
     <packaging>jar</packaging>
 
-    <name>time-microservice</name>
+    <name>time-microservice-java</name>
     <description>A small Java microservice that returns the current date and time for the root path (/).</description>
 
     <properties>
