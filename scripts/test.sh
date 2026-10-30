@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# Run the test suite.
+set -euo pipefail
+
+ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+cd "$ROOT_DIR"
+
+mvn -o test
+touch coverage.out
+
+echo ""
+echo "Tests complete."

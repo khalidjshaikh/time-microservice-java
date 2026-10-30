@@ -1,0 +1,10 @@
+.git
+.gitignore
+bin/
+target/
+coverage.out
+coverage.html
+*.md
+Dockerfile
+scripts/
+k8s/
