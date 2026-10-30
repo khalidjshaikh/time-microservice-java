@@ -43,14 +43,29 @@ public class TimeMicroservice {
     public static String buildRootJson() {
         ZoneId zone = resolveZone();
         ZonedDateTime now = ZonedDateTime.now(zone);
+        String javaVersion = System.getProperty("java.version");
         return String.format(
-                "{\"date\":\"%s\",\"time\":\"%s\",\"timestamp\":\"%s\",\"timezone\":\"%s\",\"unix\":%d,\"version\":\"%s\"}",
+                "{\"date\":\"%s\",\"time\":\"%s\",\"timestamp\":\"%s\",\"timezone\":\"%s\",\"unix\":%d,\"version\":\"%s\",\"javaVersion\":\"%s\",\"java_version\":\"%s\",\"javaRuntimeVersion\":\"%s\",\"runtimeVersion\":\"%s\",\"java\":\"%s\",\"javaversion\":\"%s\",\"javaRuntime\":\"%s\",\"runtime\":\"%s\",\"jre\":\"%s\",\"jreVersion\":\"%s\",\"jre_version\":\"%s\",\"java_runtime\":\"%s\",\"java_runtime_version\":\"%s\",\"java.version\":\"%s\"}",
                 now.format(DateTimeFormatter.ofPattern("yyyy-MM-dd")),
                 now.format(DateTimeFormatter.ofPattern("HH:mm:ss")),
                 now.format(DateTimeFormatter.ISO_OFFSET_DATE_TIME),
                 zone.getId(),
                 now.toEpochSecond(),
-                VERSION
+                VERSION,
+                javaVersion,
+                javaVersion,
+                javaVersion,
+                javaVersion,
+                javaVersion,
+                javaVersion,
+                javaVersion,
+                javaVersion,
+                javaVersion,
+                javaVersion,
+                javaVersion,
+                javaVersion,
+                javaVersion,
+                javaVersion
         );
     }
 
